@@ -4,10 +4,16 @@ import "./App.css";
 
 class App extends Component {
   render() {
-    let greeting = (name) => <h1>Hello {name}</h1>;
-    return <div className='red'>
-      {greeting("Amir")}
-    </div>;
+    let greeting = name => <h1>Hello {name}</h1>;
+    return (
+      <div>
+        <div className="red">
+          {greeting("Amir")}
+
+          <div className="box-blue" />
+        </div>
+      </div>
+    );
   }
 }
 
