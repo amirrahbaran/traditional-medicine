@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Salam2 from "./components/Salam2";
+import Welcome from "./components/Welcome";
 
 class FirstComponent extends Component {
   render() {
@@ -8,10 +8,8 @@ class FirstComponent extends Component {
     return (
       <div>
         <h1>Salam {name}</h1>
-        <Salam2 />
-        <Salam2 />
-        <Salam2 />
-        <Salam2 />
+        <Welcome name="Amir"/>
+        <Welcome name="Steve" num={5}/>
       </div>
     );
   }
