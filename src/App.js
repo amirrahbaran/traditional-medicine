@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import Salam2 from "./components/Salam2";
 
-class App extends Component {
+class FirstComponent extends Component {
   render() {
-    let greeting = name => <h1>Hello {name}</h1>;
+    const name = "You";
+
     return (
       <div>
-        <div className="red">
-          {greeting("Amir")}
-
-          <div className="box-blue" />
-        </div>
+        <h1>Salam {name}</h1>
+        <Salam2 />
+        <Salam2 />
+        <Salam2 />
+        <Salam2 />
       </div>
     );
   }
 }
 
-export default App;
+export default FirstComponent;
