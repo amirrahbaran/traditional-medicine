@@ -8,8 +8,8 @@ class FirstComponent extends Component {
     return (
       <div>
         <h1>Salam {name}</h1>
-        <Welcome name="Amir"/>
-        <Welcome name="Steve" num={5}/>
+        <Welcome name="Amir" IQ="80"/>
+        <Welcome name="Steve" num={5} IQ="120"/>
       </div>
     );
   }
