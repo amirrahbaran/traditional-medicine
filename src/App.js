@@ -9,12 +9,16 @@ class FirstComponent extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => this.tick(), 1000);
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   tick() {
-    this.setState({ 
-      time: new Date() 
+    this.setState({
+      time: new Date()
     });
   }
 
