@@ -36,7 +36,11 @@
 }
 
 .box-blue {
-  width: 50px;
-  height: 50px;
+  width: 250px;
+  height: 80px;
   background-color: blue;
+  color: white;
+  padding-top: 10px;
+  padding-left: 5px;
+  cursor: pointer;
 }

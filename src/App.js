@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./App.css";
 
 class FirstComponent extends Component {
   constructor(props) {
@@ -9,10 +10,28 @@ class FirstComponent extends Component {
   }
 
   componentDidMount() {
+    this.startClock();
+  }
+
+  startClock() {
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  pauseTick() {
+    if (this.state.pause === true) {
+      this.startClock();
+      this.setState({ pause: false });
+    } else {
+      this.stopClock();
+      this.setState({ pause: true });
+    }
+  }
+
+  stopClock() {
     clearInterval(this.interval);
   }
 
@@ -24,8 +43,8 @@ class FirstComponent extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Time: {this.state.time.toLocaleTimeString()}</h1>
+      <div onClick={() => this.pauseTick()} class="box-blue">
+        <h2>Time is {this.state.time.toLocaleTimeString()}.</h2>
       </div>
     );
   }
