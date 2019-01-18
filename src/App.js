@@ -1,15 +1,27 @@
 import React, { Component } from "react";
-import Welcome from "./components/Welcome";
 
 class FirstComponent extends Component {
-  render() {
-    const name = "You";
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: new Date()
+    };
+  }
 
+  componentDidMount() {
+    setInterval(() => this.tick(), 1000);
+  }
+
+  tick() {
+    this.setState({ 
+      time: new Date() 
+    });
+  }
+
+  render() {
     return (
       <div>
-        <h1>Salam {name}</h1>
-        <Welcome name="Amir" IQ={80}/>
-        <Welcome name="Steve" num={5} IQ={120}/>
+        <h1>Time: {this.state.time.toLocaleTimeString()}</h1>
       </div>
     );
   }
